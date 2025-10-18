@@ -1,0 +1,12 @@
+{
+  "migration_name": "20241220120000_create_projects_tables",
+  "created_at": "2024-12-20T12:00:00Z",
+  "description": "Create projects tables with milestones, tasks, repos, files, and audit logs",
+  "tables_created": ["projects", "project_milestones", "project_tasks", "project_repos", "project_files", "project_audit_logs"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS project_audit_logs CASCADE; DROP TABLE IF EXISTS project_files CASCADE; DROP TABLE IF EXISTS project_repos CASCADE; DROP TABLE IF EXISTS project_tasks CASCADE; DROP TABLE IF EXISTS project_milestones CASCADE; DROP TABLE IF EXISTS projects CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

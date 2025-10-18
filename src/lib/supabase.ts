@@ -53,6 +53,36 @@ export type Database = {
         Insert: import('../types/database').NotificationDeliveryLogInsert;
         Update: import('../types/database').NotificationDeliveryLogUpdate;
       };
+      projects: {
+        Row: import('../types/database').Project;
+        Insert: import('../types/database').ProjectInsert;
+        Update: import('../types/database').ProjectUpdate;
+      };
+      project_milestones: {
+        Row: import('../types/database').ProjectMilestone;
+        Insert: import('../types/database').ProjectMilestoneInsert;
+        Update: import('../types/database').ProjectMilestoneUpdate;
+      };
+      project_tasks: {
+        Row: import('../types/database').ProjectTask;
+        Insert: import('../types/database').ProjectTaskInsert;
+        Update: import('../types/database').ProjectTaskUpdate;
+      };
+      project_repos: {
+        Row: import('../types/database').ProjectRepo;
+        Insert: import('../types/database').ProjectRepoInsert;
+        Update: import('../types/database').ProjectRepoUpdate;
+      };
+      project_files: {
+        Row: import('../types/database').ProjectFile;
+        Insert: import('../types/database').ProjectFileInsert;
+        Update: import('../types/database').ProjectFileUpdate;
+      };
+      project_audit_logs: {
+        Row: import('../types/database').ProjectAuditLog;
+        Insert: import('../types/database').ProjectAuditLogInsert;
+        Update: never;
+      };
     };
   };
 };
