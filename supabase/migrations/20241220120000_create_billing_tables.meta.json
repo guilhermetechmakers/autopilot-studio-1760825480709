@@ -1,0 +1,12 @@
+{
+  "migration_name": "20241220120000_create_billing_tables",
+  "created_at": "2024-12-20T12:00:00Z",
+  "description": "Create comprehensive billing and invoicing system tables",
+  "tables_created": ["invoices", "payments", "billing_milestones", "time_entries", "quickbooks_sync", "profit_analytics"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS profit_analytics CASCADE; DROP TABLE IF EXISTS quickbooks_sync CASCADE; DROP TABLE IF EXISTS time_entries CASCADE; DROP TABLE IF EXISTS billing_milestones CASCADE; DROP TABLE IF EXISTS payments CASCADE; DROP TABLE IF EXISTS invoices CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

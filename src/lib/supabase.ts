@@ -83,6 +83,36 @@ export type Database = {
         Insert: import('../types/database').ProjectAuditLogInsert;
         Update: never;
       };
+      invoices: {
+        Row: import('../types/database').Invoice;
+        Insert: import('../types/database').InvoiceInsert;
+        Update: import('../types/database').InvoiceUpdate;
+      };
+      payments: {
+        Row: import('../types/database').Payment;
+        Insert: import('../types/database').PaymentInsert;
+        Update: import('../types/database').PaymentUpdate;
+      };
+      billing_milestones: {
+        Row: import('../types/database').BillingMilestone;
+        Insert: import('../types/database').BillingMilestoneInsert;
+        Update: import('../types/database').BillingMilestoneUpdate;
+      };
+      time_entries: {
+        Row: import('../types/database').TimeEntry;
+        Insert: import('../types/database').TimeEntryInsert;
+        Update: import('../types/database').TimeEntryUpdate;
+      };
+      quickbooks_sync: {
+        Row: import('../types/database').QuickBooksSync;
+        Insert: import('../types/database').QuickBooksSyncInsert;
+        Update: import('../types/database').QuickBooksSyncUpdate;
+      };
+      profit_analytics: {
+        Row: import('../types/database').ProfitAnalytics;
+        Insert: import('../types/database').ProfitAnalyticsInsert;
+        Update: import('../types/database').ProfitAnalyticsUpdate;
+      };
     };
   };
 };
