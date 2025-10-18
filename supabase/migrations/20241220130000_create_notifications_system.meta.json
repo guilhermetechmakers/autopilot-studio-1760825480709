@@ -1,0 +1,12 @@
+{
+  "migration_name": "20241220130000_create_notifications_system",
+  "created_at": "2024-12-20T13:00:00Z",
+  "description": "Create comprehensive notification system with multiple channels, user preferences, templates, and delivery tracking",
+  "tables_created": ["notifications", "notification_preferences", "notification_templates", "notification_delivery_logs"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS notification_delivery_logs CASCADE; DROP TABLE IF EXISTS notification_templates CASCADE; DROP TABLE IF EXISTS notification_preferences CASCADE; DROP TABLE IF EXISTS notifications CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

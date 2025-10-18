@@ -33,6 +33,26 @@ export type Database = {
         Insert: import('../types/database').ESignDocumentInsert;
         Update: import('../types/database').ESignDocumentUpdate;
       };
+      notifications: {
+        Row: import('../types/database').Notification;
+        Insert: import('../types/database').NotificationInsert;
+        Update: import('../types/database').NotificationUpdate;
+      };
+      notification_preferences: {
+        Row: import('../types/database').NotificationPreferences;
+        Insert: import('../types/database').NotificationPreferencesInsert;
+        Update: import('../types/database').NotificationPreferencesUpdate;
+      };
+      notification_templates: {
+        Row: import('../types/database').NotificationTemplate;
+        Insert: import('../types/database').NotificationTemplateInsert;
+        Update: import('../types/database').NotificationTemplateUpdate;
+      };
+      notification_delivery_logs: {
+        Row: import('../types/database').NotificationDeliveryLog;
+        Insert: import('../types/database').NotificationDeliveryLogInsert;
+        Update: import('../types/database').NotificationDeliveryLogUpdate;
+      };
     };
   };
 };
