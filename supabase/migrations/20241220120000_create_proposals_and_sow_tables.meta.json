@@ -1,0 +1,12 @@
+{
+  "migration_name": "20241220120000_create_proposals_and_sow_tables",
+  "created_at": "2024-12-20T12:00:00Z",
+  "description": "Create proposals, SoW templates, proposal versions, and e-signature documents tables with full RLS policies",
+  "tables_created": ["proposals", "sow_templates", "proposal_versions", "esign_documents"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS esign_documents CASCADE; DROP TABLE IF EXISTS proposal_versions CASCADE; DROP TABLE IF EXISTS sow_templates CASCADE; DROP TABLE IF EXISTS proposals CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

@@ -12,6 +12,7 @@ import EmailVerificationPage from "@/pages/auth/EmailVerificationPage";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import AIIntakePage from "@/pages/intake/AIIntakePage";
 import ProposalsPage from "@/pages/business/ProposalsPage";
+import ProposalDetailPage from "@/pages/business/ProposalDetailPage";
 import ProjectSpacePage from "@/pages/projects/ProjectSpacePage";
 import ClientPortalPage from "@/pages/projects/ClientPortalPage";
 import AICopilotPage from "@/pages/ai/AICopilotPage";
@@ -70,6 +71,7 @@ export default function App() {
               
               {/* Business process routes */}
               <Route path="/proposals" element={<ProposalsPage />} />
+              <Route path="/proposals/:id" element={<ProposalDetailPage />} />
               <Route path="/billing" element={<BillingPage />} />
               <Route path="/time-tracking" element={<TimeTrackingPage />} />
               <Route path="/handover" element={<HandoverPackPage />} />
