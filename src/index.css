@@ -1,68 +1,187 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+/* Design System with CSS Custom Properties based on Design Reference */
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Light mode colors - Deep charcoal theme */
+    --background: 24 24 27; /* #18181B - Deep charcoal */
+    --foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --card: 34 34 40; /* #222228 - Dark gray surface */
+    --card-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --popover: 35 35 41; /* #232329 - Slightly lighter dark gray */
+    --popover-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --primary: 37 99 235; /* #2563EB - Blue accent */
+    --primary-foreground: 255 255 255; /* White text on blue */
+    
+    --secondary: 113 113 122; /* #71717A - Gray for inactive states */
+    --secondary-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --muted: 39 39 42; /* #27272A - Very dark gray for dividers */
+    --muted-foreground: 161 161 170; /* #A1A1AA - Muted gray */
+    
+    --accent: 34 197 94; /* #22C55E - Green for success */
+    --accent-foreground: 255 255 255; /* White text on green */
+    
+    --destructive: 239 68 68; /* #EF4444 - Red for errors */
+    --destructive-foreground: 255 255 255; /* White text on red */
+    
+    --border: 39 39 42; /* #27272A - Very dark gray borders */
+    --input: 39 39 42; /* #27272A - Input borders */
+    --ring: 37 99 235; /* #2563EB - Focus ring */
+    
+    --radius: 0.5rem; /* 8px border radius */
   }
-  a:hover {
-    color: #747bff;
+  
+  .dark {
+    /* Dark mode uses the same colors as light mode for this design */
+    --background: 24 24 27; /* #18181B - Deep charcoal */
+    --foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --card: 34 34 40; /* #222228 - Dark gray surface */
+    --card-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --popover: 35 35 41; /* #232329 - Slightly lighter dark gray */
+    --popover-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --primary: 37 99 235; /* #2563EB - Blue accent */
+    --primary-foreground: 255 255 255; /* White text on blue */
+    
+    --secondary: 113 113 122; /* #71717A - Gray for inactive states */
+    --secondary-foreground: 244 244 245; /* #F4F4F5 - Soft white */
+    
+    --muted: 39 39 42; /* #27272A - Very dark gray for dividers */
+    --muted-foreground: 161 161 170; /* #A1A1AA - Muted gray */
+    
+    --accent: 34 197 94; /* #22C55E - Green for success */
+    --accent-foreground: 255 255 255; /* White text on green */
+    
+    --destructive: 239 68 68; /* #EF4444 - Red for errors */
+    --destructive-foreground: 255 255 255; /* White text on red */
+    
+    --border: 39 39 42; /* #27272A - Very dark gray borders */
+    --input: 39 39 42; /* #27272A - Input borders */
+    --ring: 37 99 235; /* #2563EB - Focus ring */
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+  
+  /* Typography hierarchy based on Design Reference */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 600;
+  }
+  
+  h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+  }
+  
+  h6 {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Custom component classes based on Design Reference */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-200 hover:scale-105;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+}
+
+/* Smooth Scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Animations */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
 }
